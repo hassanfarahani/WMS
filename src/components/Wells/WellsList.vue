@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="wells-view">
     <h1 class="wells-list-title">List of Available Wells</h1>
 
     <div class="wells-list">
@@ -30,10 +30,10 @@
                   <td>
                     <div class="well-edit-delete">
                         <a @click="editWell({wellID: well.id, wellUWID: well.uwid})" href="#" class="edit">
-                          <i class="fa fa-pencil"></i>
+                          <i class="fa fa-pencil editIcon"></i>
                         </a>
                         <a @click="deleteWell(well.id)" href="#" class="delete">
-                          <i class="fa fa-trash remove"></i>
+                          <i class="fa fa-trash removeIcon"></i>
                         </a>
                     </div>
                   </td>

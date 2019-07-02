@@ -1,8 +1,9 @@
 body {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #bfb8bc;
+    /* background-color: #bfb8bc; */
 }
 
 * {
@@ -16,14 +17,10 @@ body {
     margin: 0 auto;
 }
 
-body, html {
-
-  }
-
-/* ------------------------- Header --------------------- */
+/* ------------------------- Header & Footer --------------------- */
 /* ------------------------------------------------------ */
-#header {
-    height: 56px;
+#header, #footer {
+    height: 4rem;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
@@ -83,12 +80,45 @@ body, html {
     color: #fa923f;
 }
 
+#footer {
+    padding: 2rem;
+}
+
+#footer a {
+    color: #fa923f;
+}
+
+#footer .copyright {
+    text-align: center;
+    color: #fff;
+}
+
 /* ------------------------- Welcome --------------------- */
 /* ------------------------------------------------------- */
-#welcome {
-    min-height: 800px;
-    /* background-image: url(src/assets/img/background-image.jpg); */
+#welcome, #signin, #signup {
+    height: 83vh;
+    background-image: url(../img/background-image.jpg);
+    /* background-image: linear-gradient(to right, rgba(99,99,99,.4), rgba(99,99,99,.4)),url(../img/background-image.jpg); */
+    background-size: cover;
+    background-position: center;
 }
+
+.welcome-title {
+    padding-top: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.welcome-par {
+    text-align: center;
+    color: #fff;
+    margin-top: 3rem;
+    font-size: 1.3rem;
+}
+
+/* #wells-view {
+    background-color: #adadad;
+} */
 
 /* -------------------- signin-signup ------------------- */
 /* ------------------------------------------------------ */
@@ -143,35 +173,52 @@ body, html {
     font: inherit;
 }
 
+.submit {
+    text-align: center;
+    margin-top: 2rem;
+}
+
 .submit button {
     border: 1px solid #521751;
-    color: #521751;
+    color: #fff;
     padding: 10px 20px;
     font: inherit;
     cursor: pointer;
+    background-color: #2eb0a5;
+    border-radius: 1rem;
+    border-color: #2eb0a5;
+    transition: all .4s;
   }
 
 .submit button:hover,
 .submit button:active {
-    background-color: #521751;
-    color: white;
+    background-color: #fff;
+    color: #2eb0a5;
 }
 
-.submit button[disabled],
-.submit button[disabled]:hover,
-.submit button[disabled]:active {
-    border: 1px solid #ccc;
-    background-color: transparent;
-    color: #ccc;
-    cursor: not-allowed;
+.modal-header {
+    background-color: #2eb0a5;
 }
 
 
 /* -------------------- Table of wells ------------------- */
 /* ------------------------------------------------------- */
+#wells-view, .welcome-img, #signin, #signup, #add-well {
+    min-height: 35rem;
+}
+
+.wells-list {
+    margin-bottom: 1rem;
+}
+
 .wells-list-title {
-    margin-top: 1rem;
+    padding-top: 1rem;
     text-align: center;
+    color: #01227d;
+}
+
+table {
+    border: 1px solid #01227d;
 }
 
 .table-content {
@@ -186,22 +233,26 @@ body, html {
 }
 
 .table-content thead tr {
-    background-color: #d362f0;
+    background-color: #01227d;
     color: #fff;
     text-align: left;
     font-weight: bold;
 }
 
 .table-content tbody tr:nth-of-type(even) {
-    background-color: #edc5de;
+    background-color: #83acc9;
 }
 
 .table-content tbody tr:nth-of-type(odd) {
-    background-color: #fff;
+    background-color: #fff;    
 }
 
-.table-content .remove {
+.table-content .removeIcon {
     color: red;
+}
+
+.table-content .editIcon {
+    color: #364523;
 }
 
 .edit {
@@ -217,62 +268,43 @@ body, html {
 /* --------------------- forms (add well & edit well) -------------------- */
 /* ----------------------------------------------------------------------- */
 .box {
-    width: 40rem;
-    margin: 30px auto;
-    border: 1px solid #eee;
+    width: 80rem;
+    margin: 0 auto;
     padding: 20px;
-    box-shadow: 0 2px 3px #ccc;
-    /* background-color: red; */
+
 }
 
 .box h2 {
-    color: purple;
+    color: #000;
 }
 
 .box-title {
     text-align: center;
+    font-weight: bold;
 }
 
-.box .inputBox {
-    position: relative;
-    margin: 1.4rem 3rem .2rem 3rem;
-    /* margin-top: 4rem; */
+.box-title h2 {
+    color: #242b5c;
 }
 
-.box .inputBox input {
-    width: 100%;
-    padding: 1rem;
-    border-bottom: 1px solid #c4c4c4;
-    outline: none;
-    border-radius: 1rem;
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding-top: 1rem;
+    grid-gap: .5rem;
 }
 
-.box .inputBox label {
-    position: absolute;
-    color: #d6d6d6;
-    margin-bottom: 6px;
-    padding: 1rem 1rem;
-    /* pointer-events: none; */
-    top: 0;
-    left: 0;
-    transition: .5s;
+.form-grid input {
+    width: 65%;
+    border-radius: 3px;
+    padding: .3rem 1rem;
 }
 
-.box .inputBox input:focus {
-    border: 1px solid purple;
+.label {
+    justify-self: right;
+    align-self: center;
+    color: #242b5c;
 }
-
-.box .inputBox input:focus ~ label,
-.box .inputBox input:focus ~ label,
-.box .inputBox input:valid ~ label
- {
-    position: absolute;
-    top: -2.1rem;
-    left: 0;
-    color: purple;
-    font-size: .7rem;
-}
-
 
 .submit-btn {
     text-align: center;
@@ -280,10 +312,10 @@ body, html {
 }
 
 .submit-btn button {
-    background-color: #fff;
-    padding: 1rem 3rem;
-    color: purple;
-    border: 1px solid purple;
+    background-color: #242b5c;
+    padding: .5rem 3rem;
+    color: #fff;
+    border: 1px solid #242b5c;
     border-radius: 1rem;
     cursor: pointer;
     font-size: 1.2rem;
@@ -292,8 +324,8 @@ body, html {
 }
 
 .submit-btn button:hover {
-    color: #fff;
-    background-color: purple;
-    border: 1px solid purple;
+    color: #242b5c;
+    background-color: #fff;
+    border: 1px solid #242b5c;
 
 }

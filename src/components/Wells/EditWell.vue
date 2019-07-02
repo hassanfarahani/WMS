@@ -20,7 +20,7 @@
           <label for="uniqueIdentifier">Unique Identifier</label>
         </div>
 
-        <div class="inputBox notRequired">
+        <div class="inputBox">
           <input
                   type="text"
                   id="licenseNumber"
@@ -29,7 +29,7 @@
 
         </div>
 
-        <div class="inputBox notRequired">
+        <div class="inputBox">
           <input
                   type="text"
                   id="area"
@@ -37,7 +37,7 @@
           <label for="area">Area</label>
         </div>
 
-        <div class="inputBox notRequired">
+        <div class="inputBox">
           <input
                   type="text"
                   id="field"
@@ -45,7 +45,7 @@
           <label for="field">Field</label>
         </div>
 
-        <div class="inputBox notRequired">
+        <div class="inputBox">
           <input
                   type="text"
                   id="totalDepth"
@@ -53,7 +53,7 @@
           <label for="totalDepth">Total Depth</label>
         </div>
 
-        <div class="inputBox notRequired">
+        <div class="inputBox">
           <input
                   type="text"
                   id="drillingDate"
@@ -61,7 +61,7 @@
           <label for="drillingDate">Drilling Date</label>
         </div>
 
-        <div class="inputBox notRequired">
+        <div class="inputBox">
           <input
                   type="text"
                   id="status"
@@ -70,7 +70,7 @@
 
         </div>
 
-        <div class="submit-btn notRequired">
+        <div class="submit-btn">
           <button type="submit">Update</button>
         </div>
       </form>

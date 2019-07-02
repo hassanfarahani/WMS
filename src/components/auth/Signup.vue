@@ -1,31 +1,43 @@
 <template>
   <div id="signup">
-    <h2></h2>
-    <div class="signup-form">
-      <form @submit.prevent="onSubmit">
-        <div class="input">
-          <label for="username">Username</label>
-          <input
-                  type="text"
-                  id="username"
-                  v-model="username">
-        </div>
 
-        <div class="input">
-          <label for="password">Password</label>
-          <input
-                  type="password"
-                  id="password"
-                  v-model="password">
-        </div>
+    <div class="modal" id="mySignup-Modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><strong>Sign Up</strong></h5>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
 
-        <div class="submit">
-          <button type="submit">Submit</button>
+              <form @submit.prevent="onSubmit">
+                  <div class="input">
+                    <label for="username">Username</label>
+                    <input
+                            type="text"
+                            id="username"
+                            v-model="username">
+                  </div>
+
+                  <div class="input">
+                    <label for="password">Password</label>
+                    <input
+                            type="password"
+                            id="password"
+                            v-model="password">
+                  </div>
+                  <div class="submit">
+                    <button type="submit"><strong>Submit</strong></button>
+                  </div>
+              </form>
+          </div>
+
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </template>
+
 
 <script>
 

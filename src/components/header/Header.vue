@@ -6,10 +6,10 @@
       <nav class="navbar">
         <ul class="navbar-list">
           <li v-if="!auth" class="navbar-list-item">
-            <router-link :to="{name: 'Signup'}">Sign Up</router-link>
+            <router-link :to="{name: 'Signup'}"  data-toggle="modal" data-target="#mySignup-Modal">Sign Up</router-link>
           </li>
           <li v-if="!auth" class="navbar-list-item">
-            <router-link :to="{name: 'Signin'}">Sign In</router-link>
+            <router-link :to="{name: 'Signin'}"  data-toggle="modal" data-target="#myModal">Sign In</router-link>
           </li>
           <li class="navbar-list-item">
             <router-link :to="{name: 'WellsList'}">Wells List</router-link>
