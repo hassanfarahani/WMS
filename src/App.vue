@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <app-header />
-    <router-view></router-view>
+      <transition name="slide"  mode="out-in" appear>
+          <router-view></router-view>
+      </transition>
     <app-footer />
   </div>
 </template>
@@ -23,9 +25,36 @@
 </script>
 
 <style>
-  /* #app {
-     background-color: #adadad;
-  } */
+  .slide-enter-active {
+    animation: slide-in 800ms ease-out forwards;
+  }
+
+  .slide-leave-active {
+    animation: slide-out 400ms ease-out forwards;
+  }
+
+
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-out {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    } 
+    100% {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+  }
 
 </style>
 

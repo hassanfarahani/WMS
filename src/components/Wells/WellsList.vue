@@ -45,7 +45,7 @@
                   </td>
                   <td>
                       <a @click="getHistory({wellName: well.wellName, wellId: well.id})" data-toggle="modal" data-target="#myModal" href="#">
-                        <i class="fa fa-history"></i>
+                        <i class="fa fa-history historyIcon"></i>
                       </a>
                       <app-well-history />
                   </td>

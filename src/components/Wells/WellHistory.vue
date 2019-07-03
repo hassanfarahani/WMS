@@ -17,7 +17,7 @@
 
               <div v-for="(history, index) in wellHistory.histData" :key="index" class="well-hist-body">
                   <div class="well-hist-body-item">{{ history.uwid }}</div>
-                  <div class="well-hist-body-item">{{ history.changeDate }}</div>
+                  <div class="well-hist-body-item">{{ history.changeDate | localTime }}</div>
                   <div class="well-hist-body-item">{{ history.action }}</div>
               </div>          
 
@@ -31,10 +31,21 @@
 </template>
 
 <script>
+import moment from 'moment';
+
 export default {
     computed: {
         wellHistory() {
             return !this.$store.getters.getWellHistData ? false : this.$store.getters.getWellHistData;
+        }
+    },
+    filters: {
+        localTime(value) {
+            let GMTtime = value.slice(0, 19);
+            GMTtime = GMTtime.split('T').join(' ');
+            const stillUtc = moment.utc(GMTtime).toDate();
+            let local = moment(stillUtc).local().format('YYYY-MM-DD HH:mm:ss');
+            return local;
         }
     }
 

@@ -4,7 +4,7 @@
           <h2 class="font-weight-bold">Update Well Data</h2>
       </div>
 
-      <form v-if="editedWellData" @submit.prevent="submit">
+      <form v-if="editedWellData" @submit.prevent.enter="submit">
         <div class="form-grid">
             <div class="label">
                 <label for="wellName">Well Name</label>

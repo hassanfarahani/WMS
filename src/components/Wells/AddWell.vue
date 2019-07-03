@@ -4,7 +4,7 @@
         <div class="box-title">
             <h2 class="font-weight-bold">Input Well Data</h2>
         </div>
-        <form @submit.prevent="submit">
+        <form @submit.prevent.enter="submit">
           <div class="form-grid">
               <div class="label">
                   <label for="wellName">Well Name</label>

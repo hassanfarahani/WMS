@@ -271,7 +271,8 @@ table {
     margin-top: 1rem;
     border-collapse: collapse;
     font-size: 1rem;
-    min-width: 25rem;
+    /* min-width: 25rem; */
+    /* max-width: 71.25rem; */
 }
 
 .table-content th, .table-content td {
@@ -299,6 +300,10 @@ table {
 
 .table-content .editIcon {
     color: #364523;
+}
+
+.historyIcon {
+    color: #d1158c;
 }
 
 .edit {
@@ -404,5 +409,6 @@ table {
     justify-self: center;
     align-self: center;
     font-size: .8rem;
+    padding: .5rem;
 }
 
