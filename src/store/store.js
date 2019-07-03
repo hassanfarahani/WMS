@@ -11,7 +11,8 @@ export default new Vuex.Store({
     // token: localStorage.getItem('token') || null,
     token: null,
     userName: null,
-    editedWell: null
+    editedWell: null,
+    wellHistory: null
   },
   mutations: {
     authUser (state, token) {
@@ -28,6 +29,9 @@ export default new Vuex.Store({
     clearAuthData(state) {
       // localStorage.removeItem('token');
       state.token = null;
+    },
+    setWellHistory(state,  wellHistData) {
+      state.wellHistory = wellHistData;
     }
   },
   actions: {
@@ -67,7 +71,7 @@ export default new Vuex.Store({
     logout({ commit }) {
       commit('clearAuthData');
       localStorage.removeItem('token');
-      router.replace({ name: 'WellsList' });
+      router.replace({ name: 'WelcomePage' });
     },
     getWells({ commit }) {
 
@@ -158,6 +162,17 @@ export default new Vuex.Store({
           .catch(err => console.log(err))
       }
 
+    },
+    getHistory({ commit }, wellNameId) {
+      axios.get(`/api/v1/well/${wellNameId.wellId}/history`)
+      .then(res => {
+        const wellHistData = {
+          histData: res.data,
+          wellName: wellNameId.wellName
+        };
+        commit('setWellHistory', wellHistData);
+      })
+      .catch(err => console.log(err))
     }
 
     
@@ -168,6 +183,9 @@ export default new Vuex.Store({
     },
     isAuthenticated(state) {
       return state.token !== null;
+    },
+    getWellHistData(state) {
+      return state.wellHistory;
     }
   }
 })

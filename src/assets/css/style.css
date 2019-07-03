@@ -96,9 +96,10 @@ body {
 /* ------------------------- Welcome --------------------- */
 /* ------------------------------------------------------- */
 #welcome, #signin, #signup {
+    padding-top: 3rem;
     height: 83vh;
-    background-image: url(../img/background-image.jpg);
-    /* background-image: linear-gradient(to right, rgba(99,99,99,.4), rgba(99,99,99,.4)),url(../img/background-image.jpg); */
+    /* background-image: url(../img/background-image.jpg); */
+    background-image: linear-gradient(to right, rgba(99,99,99,.4), rgba(99,99,99,.4)),url(../img/background-image.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -116,19 +117,64 @@ body {
     font-size: 1.3rem;
 }
 
-/* #wells-view {
-    background-color: #adadad;
-} */
 
 /* -------------------- signin-signup ------------------- */
 /* ------------------------------------------------------ */
 
-.signin-title {
-    text-align: center;
-    margin-bottom: 2rem;
+.wrap {
+    max-width: 350px;
+    border-radius: 20px;
+    margin: 1.5rem auto;
+    background: rgba(0,0,0,.8);
+    padding: 2.5rem;
+    color: #fff;
+    padding-top: 100px;
 }
 
-.signin-form, .signup-form {
+/* .signup-title { */
+.wrap h2 {
+    text-align: center;
+}
+
+.username, .password {
+    display: block;
+    width: 100%;
+    margin: 2rem auto;
+    padding: .7rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px dotted #fff;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+.resister-btn {
+    display: block;
+    width: 100%;
+    padding: .7rem 0;
+    margin: 2rem auto 4rem auto;
+    outline: none;
+    border: none;
+    background: #60adde;
+    opacity: 0.7;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.resister-btn:hover {
+    background: #fa923f;
+}
+
+.goToSignup {
+    text-align: center;
+}
+
+.goToSignup a {
+    color:#fa923f; 
+}
+
+.signin-form {
     width: 400px;
     margin: 30px auto;
     border: 1px solid #eee;
@@ -329,3 +375,34 @@ table {
     border: 1px solid #242b5c;
 
 }
+
+
+
+/* ---------------------------------- well history ----------------------- */
+/* ----------------------------------------------------------------------- */
+
+.well-hist-heading {
+    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: .9rem;
+    border-bottom: 1px solid #2eb0a5;
+}
+
+.well-hist-heading-item {
+    justify-self: center;
+    align-self: center;
+}
+
+.well-hist-body {
+    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.well-hist-body-item {
+    justify-self: center;
+    align-self: center;
+    font-size: .8rem;
+}
+

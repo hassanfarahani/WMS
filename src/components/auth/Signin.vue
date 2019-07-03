@@ -1,46 +1,17 @@
 <template>
   <div id="signin">
 
-    <div class="modal" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title"><strong>Sign In to XYZ Corporation</strong></h5>
-            <button class="close" data-dismiss="modal">&times;</button>
-          </div>
-          <div class="modal-body">
-
-              <form @submit.prevent="onSubmit">
-                  <div class="input">
-                    <label for="username">Username</label>
-                    <input
-                            type="text"
-                            id="username"
-                            v-model="username">
-                  </div>
-
-                  <div class="input">
-                    <label for="password">Password</label>
-                    <input
-                            type="password"
-                            id="password"
-                            v-model="password">
-                  </div>
-                  <div class="submit">
-                    <button type="submit"><strong>Submit</strong></button>
-                  </div>
-              </form>
-          </div>
-
-          <div class="modal-footer">
-            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-
-        </div>
-      </div>
+    <div class="wrap">
+      <h2>Sign In Here</h2>
+          <form @submit.prevent.enter="onSubmit">
+              <input type="text" placeholder="username ..." class="username" v-model="username" required>
+              <input type="password" class="password" placeholder="password ..." v-model="password" required>
+              <button type="submit" class="resister-btn"><strong>Sign In</strong></button>
+          </form>
+          <div class="goToSignup">Need an account? &nbsp; <router-link :to="{name: 'Signup'}">Sign Up</router-link></div>
     </div>
 
-  </div>
+  </div> 
    
 </template>
 

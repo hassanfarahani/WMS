@@ -9,6 +9,7 @@ import Signup from '@/components/auth/Signup.vue'
 import Signin from '@/components/auth/Signin.vue'
 import AddWell from '@/components/Wells/AddWell.vue'
 import EditWell from '@/components/Wells/EditWell.vue'
+import WellHistory from '@/components/Wells/WellHistory.vue'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/editwell',
       name: 'EditWell',
       component: EditWell
+    },
+    {
+      path: '/wellhistory',
+      name: 'WellHistory',
+      component: WellHistory
     }
   ]
 })

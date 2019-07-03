@@ -7,14 +7,16 @@
             <thead>
                 <tr>
                   <th>Well Name</th>
-                  <th>Unique Identifier</th>
+                  <th>Unique Identifier(uwid)</th>
                   <th>License Number</th>
                   <th>Area</th>
                   <th>Field</th>
                   <th>Total Depth</th>
                   <th>Drilling Date</th>
                   <th>Status</th>
-                  <th>Edit/Delete</th>
+                  <th>Edite</th>
+                  <th>Delete</th>
+                  <th>Well History</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,13 +31,23 @@
                   <td>{{ well.status }}</td>
                   <td>
                     <div class="well-edit-delete">
-                        <a @click="editWell({wellID: well.id, wellUWID: well.uwid})" href="#" class="edit">
+                        <a @click="editWell({wellID: well.id, wellUWID: well.uwid})" href="#">
                           <i class="fa fa-pencil editIcon"></i>
                         </a>
-                        <a @click="deleteWell(well.id)" href="#" class="delete">
-                          <i class="fa fa-trash removeIcon"></i>
-                        </a>
                     </div>
+                  </td>
+                  <td>
+                    <div class="well-delete">
+                      <a @click="deleteWell(well.id)" href="#">
+                        <i class="fa fa-trash removeIcon"></i>
+                      </a>
+                    </div>
+                  </td>
+                  <td>
+                      <a @click="getHistory({wellName: well.wellName, wellId: well.id})" data-toggle="modal" data-target="#myModal" href="#">
+                        <i class="fa fa-history"></i>
+                      </a>
+                      <app-well-history />
                   </td>
                 </tr>
             </tbody>
@@ -47,12 +59,16 @@
 
 <script>
   import axios from 'axios';
+  import WellHistory from '@/components/Wells/WellHistory.vue'
 
   export default {
     data () {
       return {
 
       }
+    },
+    components: {
+      'app-well-history': WellHistory
     },
     computed : {
       wells() {
@@ -68,6 +84,9 @@
       },
       editWell(wellIdUwid) {
         this.$store.dispatch('editWell', wellIdUwid);
+      },
+      getHistory(wellNameId) {
+        this.$store.dispatch('getHistory', wellNameId);
       }
     }
   }
