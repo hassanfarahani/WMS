@@ -19,6 +19,73 @@ body {
 
 /* ------------------------- Header & Footer --------------------- */
 /* ------------------------------------------------------ */
+
+/* #header {
+    background: #242b5c;
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    float: left;
+}
+
+.logo a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.logo a:hover {
+    text-decoration: none;
+}
+
+.navbar {
+    text-align: right;
+}
+
+.navbar-list {
+    margin-bottom: 0;
+}
+
+.navbar-list-item {
+    list-style: none;
+    display: inline;
+    padding: .5rem .3rem;
+}
+
+.navbar-list-item a {
+    color: #fff;
+    font-weight: bold;
+    padding: .4rem;
+    border-radius: 3px;
+}
+
+.navbar-list-item a:hover {
+    text-decoration: none;
+    background: #fff;
+    color: #242b5c;
+}
+
+.logout {
+    background: #242b5c;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    padding: .1rem .3rem;
+    font-weight: bold;
+}
+
+.logout:hover {
+    background: #fff;
+    color: #242b5c;
+}
+
+.active {
+    background: #fff;
+    color: #242b5c;
+} */
+
 #header, #footer {
     height: 4rem;
     display: flex;
@@ -39,15 +106,15 @@ body {
     color: white;
   }
 
-  .navbar {
+  /* .navbar {
     height: 100%;
-  }
+  } */
 
   .navbar-list {
     list-style: none;
     margin: 0;
     padding: 0;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     flex-flow: row;
     align-items: center;
@@ -60,25 +127,80 @@ body {
   .navbar-list-item a {
     text-decoration: none;
     color: white;
+    padding: .5rem .4rem;
+    font-weight: bold;
+    border-radius: 3px;
   }
 
   .navbar-list-item a:hover,
   .navbar-list-item a:active,
-  .navbar-list-item a.router-link-active {
-    color: #fa923f;
+  /* .navbar-list-item a.router-link-active { */
+  .navbar-list-item .active {
+    /* color: #fa923f; */
+    background: #fff;
+    color: #242b5c;
   }
 
 .logout {
     background-color: transparent;
     border: none;
     font: inherit;
-    color: white;
     cursor: pointer;
+    border-radius: 3px;
+    color: #fff;
+    padding: .1rem .3rem;
+    font-weight: bold;
 }
 
 .logout:hover {
-    color: #fa923f;
+    /* color: #fa923f; */
+    background: #fff;
+    color: #242b5c;
 }
+
+.toggle {
+    color: #fff;
+    float: right;
+    font-size: 1.7rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+@media (max-width: 991px) {
+    .toggle {
+        display: block;
+    }
+
+    /* .active {
+        display: block;
+    } */
+
+
+    .navbar {
+        /* display: none; */
+        position: absolute;
+        width: 100%;
+        top: 4.1rem;
+        left: 0;
+        transition: .5s;
+        background: #242b5c;
+    }
+
+    .navbar-list {
+        display: block;
+        text-align: center;
+        width: 100%;
+   
+    }
+
+    .navbar-list-item {
+        width: 100%;
+        display: block;
+        margin: .8rem 0;
+    }
+}
+
 
 #footer {
     padding: 2rem;
@@ -98,7 +220,6 @@ body {
 #welcome, #signin, #signup {
     padding-top: 3rem;
     height: 83vh;
-    /* background-image: url(../img/background-image.jpg); */
     background-image: linear-gradient(to right, rgba(99,99,99,.4), rgba(99,99,99,.4)),url(../img/background-image.jpg);
     background-size: cover;
     background-position: center;
@@ -412,3 +533,38 @@ table {
     padding: .5rem;
 }
 
+
+/* ---------------------------------- Mobile Navbar ----------------------- */
+/* ------------------------------------------------------------------------ */
+
+/* .toggle {
+    cursor: pointer;
+    width: 100%;
+    padding: .7rem 2rem;
+    text-align: right;
+    color: #fff;
+    font-size: 1.6rem;
+    display: none;
+}
+
+
+@media(max-width: 768px) {
+    .toggle {
+      display: block;
+    }
+
+    ul {
+      width: 100%;
+      display: none;
+    }
+
+    ul li {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .active {
+      display: block;
+    }
+  } */
