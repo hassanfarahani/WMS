@@ -33,11 +33,12 @@ body {
   .logo {
     font-weight: bold;
     color: white;
+    font-size: 2rem;
   }
 
   .logo a {
     text-decoration: none;
-    color: white;
+    color: #fa923f;
   }
 
   .navbar-list {
@@ -130,6 +131,22 @@ body {
     color: #fff;
     margin-top: 3rem;
     font-size: 1.3rem;
+}
+
+
+/* ------------------------- About ----------------------- */
+/* ------------------------------------------------------- */
+.about {
+    height: 78.5vh;
+}
+
+.about-title {
+    margin-top: 2rem;
+}
+
+.about-par {
+    color: #242b5c;
+    margin-top: .8rem;
 }
 
 
@@ -337,7 +354,7 @@ table {
     width: 80rem;
     margin: 0 auto;
     padding: 20px;
-
+    height: 83vh;
 }
 
 .box h2 {

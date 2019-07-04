@@ -10,6 +10,7 @@ import Signin from '@/components/auth/Signin.vue'
 import AddWell from '@/components/Wells/AddWell.vue'
 import EditWell from '@/components/Wells/EditWell.vue'
 import WellHistory from '@/components/Wells/WellHistory.vue'
+import About from '@/components/About/About.vue'
 
 Vue.use(Router)
 
@@ -59,6 +60,11 @@ export default new Router({
       path: '/wellhistory',
       name: 'WellHistory',
       component: WellHistory
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: About
     }
   ]
 })

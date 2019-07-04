@@ -11,7 +11,7 @@
                   <th>License Number</th>
                   <th>Area</th>
                   <th>Field</th>
-                  <th>Total Depth (ft)</th>
+                  <th>Total Depth (m)</th>
                   <th>Drilling Date</th>
                   <th>Status</th>
                   <th>Edite</th>

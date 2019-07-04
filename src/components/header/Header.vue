@@ -1,7 +1,7 @@
 <template>
   <header id="header">
       <div class="logo">
-        <router-link :to="{name: 'WelcomePage'}">XYZ Corporation</router-link>
+        <router-link :to="{name: 'WelcomePage'}"><i>XYZ Corporation</i></router-link>
       </div>
 
       <nav class="navbar">
@@ -18,6 +18,9 @@
           </li>
           <li v-if="!auth" class="navbar-list-item" @click="openNav=!openNav">
             <router-link :to="{name: 'Signup'}" active-class="active" exact>Sign Up</router-link>
+          </li>
+          <li class="navbar-list-item" @click="openNav=!openNav">
+            <router-link :to="{name: 'About'}" active-class="active" exact>About XYZ</router-link>
           </li>
           <li v-if="auth"  class="navbar-list-item" @click="openNav=!openNav">
             <button @click="onLogout" class="logout" active-class="active" exact>Logout</button>
