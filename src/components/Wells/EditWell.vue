@@ -59,14 +59,17 @@
                 <label for="status">Status</label>
             </div>
             <div>
-                <input
-                  type="text" id="status" v-model="editedWellData.status">
+                <input type="text" id="status" v-model="editedWellData.status">
             </div>  
         </div>
 
         <div class="submit-btn">
           <button type="submit">Update Well</button>
         </div>
+
+          <div class="submit-btn submit-btn-back">
+            <button @click="backToPrevPage" type="button">Back</button>
+          </div>
       </form>
      
       <div v-else>There is no well to be updated! </div>
@@ -77,26 +80,22 @@
 export default {
     data() {
         return {
-            // wellData: {
-            //     wellName: '',
-            //     uwid: '',
-            //     licenseNumber: '',
-            //     area: '',
-            //     field: '',
-            //     totalDepth: '',
-            //     drillingDate: '',
-            //     status: ''
-            // }
         }
     },
     computed: {
+        // Getting the well data,which is going to be edited (selected by user) from the store
         editedWellData() {
             return this.$store.getters.editedWellData;
-        }
+    }
     },
     methods: {
+      // Sending the updated well data (entered by the user) to the database
       submit() {
         this.$store.dispatch('getUpdateWell', this.editedWellData);
+      },
+      // Back to previous page
+      backToPrevPage() {
+        this.$router.go(-1);
       }
     }
 }

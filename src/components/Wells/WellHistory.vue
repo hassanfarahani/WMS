@@ -10,9 +10,9 @@
           <div class="modal-body">
 
               <div class="well-hist-heading">
-                  <div class="well-hist-heading-item">UWID</div>
-                  <div class="well-hist-heading-item">Change Date</div>
-                  <div class="well-hist-heading-item">Action</div>            
+                  <div class="well-hist-heading-item"><strong>UWID</strong></div>
+                  <div class="well-hist-heading-item"><strong>Change Date</strong></div>
+                  <div class="well-hist-heading-item"><strong>Action</strong></div>            
               </div>
 
               <div v-for="(history, index) in wellHistory.histData" :key="index" class="well-hist-body">
@@ -35,11 +35,13 @@ import moment from 'moment';
 
 export default {
     computed: {
+        // Getting the history of a specific well from the store
         wellHistory() {
             return !this.$store.getters.getWellHistData ? false : this.$store.getters.getWellHistData;
         }
     },
     filters: {
+        // Converting GMT time to Local time using moment.js library
         localTime(value) {
             let GMTtime = value.slice(0, 19);
             GMTtime = GMTtime.split('T').join(' ');

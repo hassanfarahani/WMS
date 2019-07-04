@@ -20,72 +20,6 @@ body {
 /* ------------------------- Header & Footer --------------------- */
 /* ------------------------------------------------------ */
 
-/* #header {
-    background: #242b5c;
-    width: 100%;
-    padding: 1rem 2rem;
-}
-
-.logo {
-    float: left;
-}
-
-.logo a {
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.logo a:hover {
-    text-decoration: none;
-}
-
-.navbar {
-    text-align: right;
-}
-
-.navbar-list {
-    margin-bottom: 0;
-}
-
-.navbar-list-item {
-    list-style: none;
-    display: inline;
-    padding: .5rem .3rem;
-}
-
-.navbar-list-item a {
-    color: #fff;
-    font-weight: bold;
-    padding: .4rem;
-    border-radius: 3px;
-}
-
-.navbar-list-item a:hover {
-    text-decoration: none;
-    background: #fff;
-    color: #242b5c;
-}
-
-.logout {
-    background: #242b5c;
-    border: none;
-    border-radius: 3px;
-    color: #fff;
-    padding: .1rem .3rem;
-    font-weight: bold;
-}
-
-.logout:hover {
-    background: #fff;
-    color: #242b5c;
-}
-
-.active {
-    background: #fff;
-    color: #242b5c;
-} */
-
 #header, #footer {
     height: 4rem;
     display: flex;
@@ -106,15 +40,10 @@ body {
     color: white;
   }
 
-  /* .navbar {
-    height: 100%;
-  } */
-
   .navbar-list {
     list-style: none;
     margin: 0;
     padding: 0;
-    /* height: 100%; */
     display: flex;
     flex-flow: row;
     align-items: center;
@@ -133,13 +62,11 @@ body {
   }
 
   .navbar-list-item a:hover,
-  .navbar-list-item a:active,
-  /* .navbar-list-item a.router-link-active { */
-  .navbar-list-item .active {
-    /* color: #fa923f; */
+  .navbar-list-item a.active {
     background: #fff;
     color: #242b5c;
   }
+
 
 .logout {
     background-color: transparent;
@@ -153,7 +80,6 @@ body {
 }
 
 .logout:hover {
-    /* color: #fa923f; */
     background: #fff;
     color: #242b5c;
 }
@@ -165,42 +91,6 @@ body {
     cursor: pointer;
     display: none;
 }
-
-
-@media (max-width: 991px) {
-    .toggle {
-        display: block;
-    }
-
-    /* .active {
-        display: block;
-    } */
-
-
-    .navbar {
-        /* display: none; */
-        position: absolute;
-        width: 100%;
-        top: 4.1rem;
-        left: 0;
-        transition: .5s;
-        background: #242b5c;
-    }
-
-    .navbar-list {
-        display: block;
-        text-align: center;
-        width: 100%;
-   
-    }
-
-    .navbar-list-item {
-        width: 100%;
-        display: block;
-        margin: .8rem 0;
-    }
-}
-
 
 #footer {
     padding: 2rem;
@@ -231,6 +121,10 @@ body {
     text-align: center;
 }
 
+.welcome-title h1 {
+    font-size: 4rem;
+}
+
 .welcome-par {
     text-align: center;
     color: #fff;
@@ -243,13 +137,13 @@ body {
 /* ------------------------------------------------------ */
 
 .wrap {
-    max-width: 350px;
-    border-radius: 20px;
+    max-width: 21.9rem;
+    border-radius: 1.25rem;
     margin: 1.5rem auto;
     background: rgba(0,0,0,.8);
     padding: 2.5rem;
     color: #fff;
-    padding-top: 100px;
+    padding-top: 6.25rem;
 }
 
 /* .signup-title { */
@@ -393,7 +287,7 @@ table {
     border-collapse: collapse;
     font-size: 1rem;
     /* min-width: 25rem; */
-    /* max-width: 71.25rem; */
+    max-width: 71.25rem;
 }
 
 .table-content th, .table-content td {
@@ -461,13 +355,13 @@ table {
 
 .form-grid {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2fr;
     padding-top: 1rem;
     grid-gap: .5rem;
 }
 
 .form-grid input {
-    width: 65%;
+    width: 50%;
     border-radius: 3px;
     padding: .3rem 1rem;
 }
@@ -493,6 +387,7 @@ table {
     font-size: 1.2rem;
     font-weight: bold;
     transition: .5s;
+    outline: none;
 }
 
 .submit-btn button:hover {
@@ -500,6 +395,20 @@ table {
     background-color: #fff;
     border: 1px solid #242b5c;
 
+}
+
+.submit-btn-back button {
+    background-color: #fa923f;
+    border: #fa923f;
+    /* margin-bottom: 1.4rem; */
+    padding: .3rem 2rem;
+    font-size: .9rem;
+}
+
+.submit-btn-back button:hover {
+    color: #fa923f;
+    background-color: #fff;
+    border: 1px solid #fa923f;
 }
 
 
@@ -534,37 +443,85 @@ table {
 }
 
 
-/* ---------------------------------- Mobile Navbar ----------------------- */
+/* ---------------------------------- Media queries ----------------------- */
 /* ------------------------------------------------------------------------ */
 
-/* .toggle {
-    cursor: pointer;
-    width: 100%;
-    padding: .7rem 2rem;
-    text-align: right;
-    color: #fff;
-    font-size: 1.6rem;
-    display: none;
+@media (max-width: 768px) {
+    .toggle {
+        display: block;
+    }
+
+    /* .active {
+        display: block;
+    } */
+
+
+    .navbar {
+        /* display: none; */
+        position: absolute;
+        width: 100%;
+        top: 4.1rem;
+        left: 0;
+        transition: .5s;
+        background: #242b5c;
+    }
+
+    .navbar-list {
+        display: none;
+        text-align: center;
+        width: 100%;
+   
+    }
+
+    .navbar-list-item {
+        width: 100%;
+        margin: .8rem 0;
+    }
+
+    .wells-list {
+        overflow-x:auto;
+    }
+
+    .form-grid {
+        max-width: 70%;
+    }
+
+    .box-title {
+        width: 71%;
+    }
+
+    .submit-btn {
+        width: 71%;
+    }
+
+    .welcome-title h1 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .welcome-title p {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
 }
 
-
-@media(max-width: 768px) {
-    .toggle {
-      display: block;
+@media (max-width: 481px) {
+    .welcome-title h1 {
+        font-size: 3rem;
     }
 
-    ul {
-      width: 100%;
-      display: none;
+    .welcome-title h2 {
+        font-size: 2rem;
     }
 
-    ul li {
-      display: block;
-      text-align: center;
-      width: 100%;
+    .welcome-title p {
+        font-size: .9rem;
+        padding-left: .5rem;
+        padding-right: .5rem;
     }
 
-    .active {
-      display: block;
+    .wrap {
+        max-width: 90%;
     }
-  } */
+}
+

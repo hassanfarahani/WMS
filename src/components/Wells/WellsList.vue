@@ -11,7 +11,7 @@
                   <th>License Number</th>
                   <th>Area</th>
                   <th>Field</th>
-                  <th>Total Depth</th>
+                  <th>Total Depth (ft)</th>
                   <th>Drilling Date</th>
                   <th>Status</th>
                   <th>Edite</th>
@@ -71,20 +71,25 @@
       'app-well-history': WellHistory
     },
     computed : {
+      // Getting all the available wells from the store
       wells() {
         return this.$store.state.wells;
       }
     },
+    // Getting all the available wells from the database
     created () {
       this.$store.dispatch('getWells');
     },
     methods: {
+      // Delete a well
       deleteWell(wellId) {
         this.$store.dispatch('deleteWell', wellId);
       },
+      // Edit a well
       editWell(wellIdUwid) {
         this.$store.dispatch('editWell', wellIdUwid);
       },
+      // History of a specific well along with an object containing well name & well id
       getHistory(wellNameId) {
         this.$store.dispatch('getHistory', wellNameId);
       }

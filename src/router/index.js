@@ -40,6 +40,7 @@ export default new Router({
       path: '/addwell',
       name: 'AddWell',
       component: AddWell,
+      // Check for availability of token in the store in order to allow for adding a well (check to see if user signed in or not)
       beforeEnter: (to, from, next) => {
         if (store.state.token) {
           next();

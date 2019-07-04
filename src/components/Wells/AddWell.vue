@@ -67,6 +67,10 @@
           <div class="submit-btn">
             <button type="submit">Add Well</button>
           </div>
+
+          <div class="submit-btn submit-btn-back">
+            <button @click="backToPrevPage" type="button">Back</button>
+          </div>
         </form>
       </div>
     </div>
@@ -90,8 +94,13 @@ export default {
     },
     computed: {},
     methods: {
+        // Adding a new well to the database
         submit() {
             this.$store.dispatch('addNewWell', this.wellData);
+        },
+        // Back to previous page
+        backToPrevPage() {
+            this.$router.go(-1);
         }
     }
 }

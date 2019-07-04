@@ -19,6 +19,7 @@
       'app-footer': Footer
     },
     created() {
+      // Automatic signing in the user after reloading the page
       this.$store.dispatch('autoSignin');
     }
   }

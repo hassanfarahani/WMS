@@ -4,48 +4,26 @@
         <router-link :to="{name: 'WelcomePage'}">XYZ Corporation</router-link>
       </div>
 
-      <!-- <nav :class="['navbar', { active: openNav }]"> -->
-      <nav v-if="!openNav" class="navbar">
+      <nav class="navbar">
 
-        <ul class="navbar-list">
+        <ul :class="[{ active: openNav },'navbar-list' ]">
           <li class="navbar-list-item" @click="openNav=!openNav">
-            <router-link :to="{name: 'WellsList'}" active-class="active">Wells List</router-link>
+            <router-link :to="{name: 'WellsList'}" active-class="active" exact><a>Wells List</a></router-link>
           </li>
           <li v-if="auth" class="navbar-list-item"  @click="openNav=!openNav">
-            <router-link :to="{name: 'AddWell'}" active-class="active">Add a New Well</router-link>
+            <router-link :to="{name: 'AddWell'}" active-class="active" exact>Add a New Well</router-link>
           </li>
           <li v-if="!auth"  class="navbar-list-item" @click="openNav=!openNav">
-            <router-link :to="{name: 'Signin'}" active-class="active">Sign In</router-link>
+            <router-link :to="{name: 'Signin'}" active-class="active" exact>Sign In</router-link>
           </li>
           <li v-if="!auth" class="navbar-list-item" @click="openNav=!openNav">
-            <router-link :to="{name: 'Signup'}" active-class="active">Sign Up</router-link>
+            <router-link :to="{name: 'Signup'}" active-class="active" exact>Sign Up</router-link>
           </li>
           <li v-if="auth"  class="navbar-list-item" @click="openNav=!openNav">
-            <button @click="onLogout" class="logout" active-class="active">Logout</button>
+            <button @click="onLogout" class="logout" active-class="active" exact>Logout</button>
           </li>
         </ul>
 
-        <!-- 
-                <div class="logo">
-        <router-link :to="{name: 'WelcomePage'}">XYZ Corporation</router-link>
-      </div>
-          <ul class="navbar-list">
-          <li class="navbar-list-item">
-            <router-link :to="{name: 'WellsList'}">Wells List</router-link>
-          </li>
-          <li v-if="auth" class="navbar-list-item">
-            <router-link :to="{name: 'AddWell'}">Add a New Well</router-link>
-          </li>
-          <li v-if="!auth" class="navbar-list-item">
-            <router-link :to="{name: 'Signin'}">Sign In</router-link>
-          </li>
-          <li v-if="!auth" class="navbar-list-item">
-            <router-link :to="{name: 'Signup'}">Sign Up</router-link>
-          </li>
-          <li v-if="auth" class="navbar-list-item">
-            <button @click="onLogout" class="logout">Logout</button>
-          </li>
-        </ul> -->
       </nav>
       <div @click="toggleMenu" class="toggle">
             <i class="fa fa-bars menu"></i>
@@ -61,14 +39,17 @@ export default {
     }
   },
   computed: {
+    // updating the UI state based on Authentication state (TRUE or FALSE)
     auth() {
       return this.$store.getters.isAuthenticated;
     }
   },
   methods: {
+    // Logging out the user
     onLogout() {
       this.$store.dispatch('logout');
     },
+    // Toggle mobile menu
     toggleMenu() {
       this.openNav = !this.openNav;
     }
@@ -77,8 +58,14 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 
+  @media (max-width: 768px) {
+
+      .active {
+          display: block;
+      }
+  }
 
 
 </style>
