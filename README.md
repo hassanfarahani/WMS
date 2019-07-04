@@ -1,17 +1,14 @@
 # mcdaniel-exercise
 
-> Simple Well Management System(WMS) application created with Vue.js
+> Simple Well Management System(WMS) application created with Vue.js. 
 > App URL: https://wms-app.netlify.com
 
 ## Introduction
 > The aim of the WMS application is to help XYZ corporation (Oil & Gas Producer in Alberta) to manage their wells and to give them access to the latest version of the well data. Admin users can add/edit/delete the well list after login. Anonymous users, without logging in, can view the list of wells with all fields that are currently in the system. It also let users view the change history of the well when asked. 
 
 ### Technologies
-> Languages & Libraries
-    * Vue.js 
-    * Bootstrap 4
-    * Fontawesome
-    * Moment.js
+> Languages & Libraries:
+    Vue.js, Bootstrap 4, Fontawesome, Moment.js
 
 
 #### Build Setup
