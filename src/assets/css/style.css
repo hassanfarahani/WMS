@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    /* background-color: #bfb8bc; */
 }
 
 * {
@@ -351,10 +350,8 @@ table {
 /* --------------------- forms (add well & edit well) -------------------- */
 /* ----------------------------------------------------------------------- */
 .box {
-    width: 80rem;
     margin: 0 auto;
     padding: 20px;
-    height: 83vh;
 }
 
 .box h2 {
@@ -499,18 +496,6 @@ table {
         overflow-x:auto;
     }
 
-    .form-grid {
-        max-width: 70%;
-    }
-
-    .box-title {
-        width: 71%;
-    }
-
-    .submit-btn {
-        width: 71%;
-    }
-
     .welcome-title h1 {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -523,6 +508,28 @@ table {
 }
 
 @media (max-width: 481px) {
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .box-title h2 {
+        font-size: 1.5rem;
+    }
+
+    .box {
+        width: 100%;
+        padding: 2rem .3rem;;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .form-grid input {
+        width: 90%;
+    }
+
     .welcome-title h1 {
         font-size: 3rem;
     }
@@ -541,4 +548,5 @@ table {
         max-width: 90%;
     }
 }
+
 
