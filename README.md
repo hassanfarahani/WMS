@@ -8,7 +8,7 @@
 
 ### Technologies
 > Languages & Libraries:
-    Vue.js, Bootstrap 4, Fontawesome, Moment.js
+    Vue.js, Vuelidate, Bootstrap 4, Fontawesome, Moment.js
 
 
 #### Build Setup
