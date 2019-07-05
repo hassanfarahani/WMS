@@ -155,11 +155,11 @@ body {
 .wrap {
     max-width: 21.9rem;
     border-radius: 1.25rem;
-    margin: 1.5rem auto;
+    margin: .5rem auto;
     background: rgba(0,0,0,.8);
     padding: 2.5rem;
     color: #fff;
-    padding-top: 6.25rem;
+    padding-top: 3rem;
 }
 
 /* .signup-title { */
@@ -170,7 +170,7 @@ body {
 .username, .password {
     display: block;
     width: 100%;
-    margin: 2rem auto;
+    margin: 1rem auto;
     padding: .7rem;
     outline: none;
     border: none;
@@ -275,6 +275,18 @@ body {
 
 .modal-header {
     background-color: #2eb0a5;
+}
+
+.username.invalid, .password.invalid {
+    border: 1px solid red;
+    background-color: #ffc9aa;
+}
+
+.username-error, .password-error {
+    margin: 0;
+    font-size: .9rem;
+    font-style: italic;
+    color: #ffc9aa;
 }
 
 
@@ -505,6 +517,15 @@ table {
         padding-left: .5rem;
         padding-right: .5rem;
     }
+
+    .wrap {
+        padding-bottom: .5rem;
+    }
+
+    .resister-btn {
+        padding: .7rem 0;
+        margin: 2rem auto 2rem auto;
+    }
 }
 
 @media (max-width: 481px) {
@@ -547,6 +568,7 @@ table {
     .wrap {
         max-width: 90%;
     }
+
 }
 
 
